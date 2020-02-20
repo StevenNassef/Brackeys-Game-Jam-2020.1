@@ -18,18 +18,20 @@ MonoBehaviour:
   titlesub: 
   sections:
   - heading: About SNAPS Packs
-    text: 'SNAPS provides Unity developers an exhaustive library of modular content designed to make prototyping and building first playables quick and easy. '
+    text: 'SNAPS provides Unity developers an exhaustive library of modular content
+      designed to make prototyping and building first playables quick and easy. '
     linkText: 
     url: 
   - heading: 
     text: "SNAPS prefabs are built to real-world scale but are designed to \u201Csnap\u201D
-      together when used with ProGrids. \nGrid snap measurements start at 1m and are
-      halved ( eg. 0.5, 0.25, 0.125 etc ) according to refinement needed to place
+      together when used with ProGrids. \nGrid snap measurements start at 1m and
+      are halved ( eg. 0.5, 0.25, 0.125 etc ) according to refinement needed to place
       or position smaller objects."
     linkText: 
     url: 
   - heading: 
-    text: SNAP pack models were "modelled" entirely with ProBuilder, and can be further customized or modified with ProBuilder.
+    text: SNAP pack models were "modelled" entirely with ProBuilder, and can be further
+      customized or modified with ProBuilder.
     linkText: 
     url: 
   - heading: 
