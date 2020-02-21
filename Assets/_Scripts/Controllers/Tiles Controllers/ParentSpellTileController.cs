@@ -15,6 +15,11 @@ public class ParentSpellTileController : MonoBehaviour
         _tileMaterial = GetComponent<MeshRenderer>().material;
         SetTileColor(spellController.CurrentSpell.SpellColor);
         spellType = spellController.CurrentSpell.SpellType;
+        if (_isActivatingTile)
+            _tileMaterial.SetTexture("Albedo", spellController.CurrentSpell.SpellActivationSymbol);
+        else
+            _tileMaterial.SetTexture("Albedo", spellController.CurrentSpell.SpellEffectSymbol);
+        
     }
 
     // Update is called once per frame

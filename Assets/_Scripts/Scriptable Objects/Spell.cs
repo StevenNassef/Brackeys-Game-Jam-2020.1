@@ -8,13 +8,13 @@ public class Spell : ScriptableObject
 {
     [SerializeField] private SpellType _spellType;
     [ColorUsage(true, true)] [SerializeField] private Color _spellColor;
-    [SerializeField] private Sprite _spellActivationSymbol;
-    [SerializeField] private Sprite _spellEffectSymbol;
+    [SerializeField] private Texture _spellActivationSymbol;
+    [SerializeField] private Texture _spellEffectSymbol;
 
     public SpellType SpellType => _spellType;
     public Color SpellColor => _spellColor;
-    public Sprite SpellActivationSymbol => _spellActivationSymbol;
-    public Sprite SpellEffectSymbol => _spellEffectSymbol;
+    public Texture SpellActivationSymbol => _spellActivationSymbol;
+    public Texture SpellEffectSymbol => _spellEffectSymbol;
 
 }
 
