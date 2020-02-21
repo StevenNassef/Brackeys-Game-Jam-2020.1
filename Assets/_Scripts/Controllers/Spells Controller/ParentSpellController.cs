@@ -35,7 +35,7 @@ public class ParentSpellController : MonoBehaviour
     {
         if (OnSpellTileExit != null && SpellActivated)
         {
-            _spellActivated = true;
+            _spellActivated = false;
             OnSpellTileExit.Invoke(player);
         }
     }

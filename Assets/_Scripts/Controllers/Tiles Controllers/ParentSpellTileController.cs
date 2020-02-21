@@ -58,6 +58,7 @@ public class ParentSpellTileController : MonoBehaviour
     {
         if (spellController.SpellActivated && _isEffectTile && MouseDown != null)
         {
+            Debug.Log("Spell Activated");
             MouseDown.Invoke();
         }
     }
