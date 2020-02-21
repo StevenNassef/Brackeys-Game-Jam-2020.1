@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TelekanisisCubeController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] GameObject dummyCube;
+    [SerializeField] TelekanisiDummyCube dummyCubeController;
     void Start()
     {
-
+        dummyCubeController = dummyCube.GetComponent<TelekanisiDummyCube>();
     }
 
     // Update is called once per frame
@@ -16,8 +17,19 @@ public class TelekanisisCubeController : MonoBehaviour
 
     }
 
-    private void OnMouseDrag()
+    public void MouseUpFromCube()
     {
-        
+        if(dummyCubeController.isSafe)
+        {
+            transform.position = dummyCube.transform.position;
+        }
+        dummyCube.SetActive(false);
+        dummyCube.transform.position = transform.position;
     }
+
+    public void MouseDownOnCube()
+    {
+        dummyCube.SetActive(true);
+    }
+
 }
