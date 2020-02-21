@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BreakableTile : MonoBehaviour
 {
-    public Texture brokenTexture;
+    public GameObject brokenTile;
     public float fallingDistance = 1;
     public float fallingSpeed = 1;
  
@@ -19,14 +19,22 @@ public class BreakableTile : MonoBehaviour
 
     private void Update() {
         if(broken) {
-            float distanceTravelled = Mathf.Abs(initVerticalPosition - transform.position.y);
-            if(distanceTravelled < fallingDistance) {
-                transform.Translate(Vector3.down * Time.deltaTime * fallingSpeed);
-            } else {
-                // TODO Finalize Destroying maybe by pooling
-                destroyed = true;
-            }
+            Instantiate(brokenTile, transform.position, transform.rotation);
+            Destroy(gameObject);
+            // float distanceTravelled = Mathf.Abs(initVerticalPosition - transform.position.y);
+            // if(distanceTravelled < fallingDistance) {
+            //     transform.Translate(Vector3.down * Time.deltaTime * fallingSpeed);
+            // } else {
+            //     FinalizeDestroyingTile();
+            //     // TODO Finalize Destroying maybe by pooling
+            //     destroyed = true;
+            // }
         }
+    }
+
+    private void FinalizeDestroyingTile() {
+        
+        
     }
 
     private void OnCollisionExit(Collision other) {
