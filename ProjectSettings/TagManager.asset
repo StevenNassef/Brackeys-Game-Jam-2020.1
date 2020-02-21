@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [Fire]
+  tags:
+  - Fire
+  - PlayerCamera
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,6 @@ TagManager:
   - Post Processing
   - PlayerViewLayer
   - StrategyViewLayer
-  - 
   - 
   - 
   - 
