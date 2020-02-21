@@ -38,7 +38,14 @@
             destPoint = (destPoint + 1) % points.Length;
         }
 
-
+        void OnCollisionEnter(Collision other) {
+            //Debug.Log("Gameover!");
+            // Checking if the collision occurs with layer 11(Player) then gameover
+            if(other.gameObject.layer == 11) {
+                // Call Gameover Logic
+                Debug.Log("Gameover!");
+            }
+        }
         void Update () {
             // Choose the next destination point when the agent gets
             // close to the current one.
