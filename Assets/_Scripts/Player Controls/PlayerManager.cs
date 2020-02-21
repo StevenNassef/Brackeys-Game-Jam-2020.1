@@ -4,8 +4,10 @@ using UnityEngine;
 using Player.Control;
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] private AnkhController ankhController;
-    [SerializeField] private PlayerControllerEngine playerController;
+    [SerializeField] private AnkhController _ankhController;
+    [SerializeField] private PlayerControllerEngine _playerController;
+
+    public AnkhController CurrentAnkhController =>_ankhController;
     void Start()
     {
         

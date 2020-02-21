@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName="Spells/New Spell")]
+[CreateAssetMenu(menuName = "Spells/New Spell")]
+[System.Serializable]
 public class Spell : ScriptableObject
 {
-    [SerializeField] private Spells _spellName;
+    [SerializeField] private SpellType _spellType;
     [ColorUsage(true, true)] [SerializeField] private Color _spellColor;
-    [SerializeField] private Sprite _spellSymbol;
+    [SerializeField] private Sprite _spellActivationSymbol;
+    [SerializeField] private Sprite _spellEffectSymbol;
 
-    public Spells SpellName() => _spellName;
-    public Color SpellColor() => _spellColor;
-    public Sprite SpellSymbol() => _spellSymbol;
+    public SpellType SpellType => _spellType;
+    public Color SpellColor => _spellColor;
+    public Sprite SpellActivationSymbol => _spellActivationSymbol;
+    public Sprite SpellEffectSymbol => _spellEffectSymbol;
 
 }
 
-public enum Spells
+public enum SpellType
 {
-    Death_Hole,Telekinesis,Creator,Manipulator,Soul_Shifter
+    Death_Hole, Telekinesis, Creator, Manipulator, Soul_Shifter
 }

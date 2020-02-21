@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AnkhGem
+  m_Name: SpellTile
   m_Shader: {fileID: -6465566751694194690, guid: 6e667d1a1efe8d145a5c94caefb97098,
     type: 3}
   m_ShaderKeywords: 
@@ -22,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_93B2F29F:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: fe42e060042f3b64e8e159bb84c7ae0b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_A5543B07:

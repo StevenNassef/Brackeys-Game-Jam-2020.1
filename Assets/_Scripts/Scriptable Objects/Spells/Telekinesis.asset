@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Telekinesis
   m_EditorClassIdentifier: 
   _spellName: 1
-  _spellColor: {r: 3.9999995, g: 3.836597, b: 0, a: 0}
+  _spellColor: {r: 0.078339934, g: 0.26153037, b: 4.987652, a: 0}
   _spellSymbol: {fileID: 0}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Manipulator
   m_EditorClassIdentifier: 
   _spellName: 3
-  _spellColor: {r: 3.6235294, g: 0, b: 4, a: 0}
+  _spellColor: {r: 3.9999995, g: 3.4840736, b: 0, a: 0}
   _spellSymbol: {fileID: 0}
