@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f5e50020cfec7543bc739ec05b13c34, type: 3}
   m_Name: Creator
   m_EditorClassIdentifier: 
-  _spellName: 2
+  _spellType: 2
   _spellColor: {r: 0.111839026, g: 11.0720625, b: 0, a: 0}
-  _spellSymbol: {fileID: 0}
+  _spellActivationSymbol: {fileID: 2800000, guid: 3abca400a0c756f4689597360ab613fb,
+    type: 3}
+  _spellEffectSymbol: {fileID: 2800000, guid: c2f46e0cda21b984a8bdaf995e7667c8, type: 3}

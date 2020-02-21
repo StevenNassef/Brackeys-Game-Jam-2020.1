@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f5e50020cfec7543bc739ec05b13c34, type: 3}
   m_Name: Death Hole
   m_EditorClassIdentifier: 
-  _spellName: 0
+  _spellType: 0
   _spellColor: {r: 4, g: 0, b: 0, a: 0}
-  _spellSymbol: {fileID: 0}
+  _spellActivationSymbol: {fileID: 2800000, guid: 1b6fcbd4ca2f0dc49bdca9605ef83a27,
+    type: 3}
+  _spellEffectSymbol: {fileID: 2800000, guid: 3ff1bb524ea49954281141938de0378f, type: 3}
