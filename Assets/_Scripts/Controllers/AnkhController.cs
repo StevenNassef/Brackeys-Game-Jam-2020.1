@@ -12,7 +12,11 @@ public class AnkhController : MonoBehaviour
 
     void Start()
     {
-        gemMaterial = gemGFX.GetComponent<MeshRenderer>().material;        
+        gemMaterial = gemGFX.GetComponent<MeshRenderer>().material;       
+        if(_currentAnkhSpell != null)
+        {
+            SetAnkhSpell(_currentAnkhSpell);
+        } 
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class AnkhController : MonoBehaviour
         }
         else
         {
+            isGlowing(true);
             SetAnkhColor(newSpell.SpellColor);
             _currentAnkhSpell = newSpell;
         }

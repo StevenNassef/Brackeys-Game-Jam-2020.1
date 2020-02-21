@@ -1,20 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class ParentSpellTileController : MonoBehaviour
 {
+    [SerializeField] private GameObject _GFX;
     [SerializeField] private bool _isActivatingTile;
+    [SerializeField] private bool _isEffectTile;
 
+    public UnityEvent MouseDown;
     protected ParentSpellController spellController;
     protected Material _tileMaterial;
     protected SpellType spellType;
     void Start()
     {
         spellController = GetComponentInParent<ParentSpellController>();
-        _tileMaterial = GetComponent<MeshRenderer>().material;
+        _tileMaterial = _GFX.GetComponent<MeshRenderer>().material;
         SetTileColor(spellController.CurrentSpell.SpellColor);
         spellType = spellController.CurrentSpell.SpellType;
+        if (_isActivatingTile)
+            _tileMaterial.SetTexture("Albedo", spellController.CurrentSpell.SpellActivationSymbol);
+        else
+            _tileMaterial.SetTexture("Albedo", spellController.CurrentSpell.SpellEffectSymbol);
+
     }
 
     // Update is called once per frame
@@ -46,6 +54,15 @@ public class ParentSpellTileController : MonoBehaviour
 
     }
 
+    private void OnMouseDown()
+    {
+        if (spellController.SpellActivated && _isEffectTile && MouseDown != null)
+        {
+            Debug.Log("Spell Activated");
+            MouseDown.Invoke();
+        }
+    }
+
     private void OnEnable()
     {
         if (spellController == null)
@@ -58,9 +75,9 @@ public class ParentSpellTileController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_isActivatingTile && other.gameObject.CompareTag("Player"))
+        if (_isActivatingTile && (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy")))
         {
-            Spell currentSpell = other.GetComponent<PlayerManager>().CurrentAnkhController.CurrentAnkhSpell;
+            Spell currentSpell = PlayerManager.instance.CurrentAnkhController.CurrentAnkhSpell;
 
             if (currentSpell != null && currentSpell.SpellType == spellType)
             {
@@ -71,9 +88,14 @@ public class ParentSpellTileController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (_isActivatingTile && other.gameObject.CompareTag("Player"))
+        if (_isActivatingTile && (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy")))
         {
-            spellController.SpellExit(other);
+            Spell currentSpell = PlayerManager.instance.CurrentAnkhController.CurrentAnkhSpell;
+
+            if (currentSpell != null && currentSpell.SpellType == spellType)
+            {
+                spellController.SpellExit(other);
+            }
         }
     }
 }

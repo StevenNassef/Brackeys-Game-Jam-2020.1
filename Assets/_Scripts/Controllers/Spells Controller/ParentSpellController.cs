@@ -9,6 +9,8 @@ public class ParentSpellController : MonoBehaviour
     public delegate void OnSpellEvent(Collider player);
     public event OnSpellEvent OnSpellTileEnter;
     public event OnSpellEvent OnSpellTileExit;
+    private bool _spellActivated;
+    public bool SpellActivated => _spellActivated;
     void Start()
     {
 
@@ -22,16 +24,18 @@ public class ParentSpellController : MonoBehaviour
 
     public void SpellEnter(Collider player)
     {
-        if (OnSpellTileEnter != null)
+        if (OnSpellTileEnter != null && !SpellActivated)
         {
+            _spellActivated = true;
             OnSpellTileEnter.Invoke(player);
         }
     }
 
     public void SpellExit(Collider player)
     {
-        if (OnSpellTileExit != null)
+        if (OnSpellTileExit != null && SpellActivated)
         {
+            _spellActivated = false;
             OnSpellTileExit.Invoke(player);
         }
     }

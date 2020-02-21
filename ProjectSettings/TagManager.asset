@@ -19,8 +19,11 @@ TagManager:
   - Post Processing
   - PlayerViewLayer
   - StrategyViewLayer
+  - Player
+  - Obstacle
+  - PlayerInvisiblity
+  - Telekanisis
   - Floating Tiles
-  - 
   - 
   - 
   - 
