@@ -66,12 +66,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Alpha: 1.12
-    - AnimationSpeed: 2.5
+    - Alpha: 2
+    - AnimationSpeed: 4
     - Boolean_A55FAE94: 0
     - Boolean_FC30FCAF: 1
     - EnableGlow: 1
-    - Fill: 0.6
+    - Fill: 0.5
     - Vector1_790A1F6: 0.1
     - Vector1_806CB5D1: 4
     - Vector1_A47DF627: -0.98
@@ -103,7 +103,7 @@ Material:
     - Color_9ED9BD11: {r: 1, g: 1, b: 1, a: 1}
     - Color_C14C05AE: {r: 4.121588, g: 3.683935, b: 0, a: 0}
     - Color_FF8AAB6A: {r: 6.964404, g: 2.356471, b: 0, a: 0}
-    - GlowColor: {r: 1, g: 0.6472527, b: 0, a: 0}
+    - GlowColor: {r: 11.984314, g: 7.780392, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
