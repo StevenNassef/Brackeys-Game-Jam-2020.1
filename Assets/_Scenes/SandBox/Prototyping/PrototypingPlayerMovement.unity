@@ -752,8 +752,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2296e26e1b014f345a63642224541a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovingTurnSpeed: 500
-  m_StationaryTurnSpeed: 300
+  m_MovingTurnSpeed: 4500
+  m_StationaryTurnSpeed: 1500
   m_JumpPower: 7
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
