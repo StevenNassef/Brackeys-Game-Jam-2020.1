@@ -21,7 +21,7 @@ public class CreatorSpellCubeController : MonoBehaviour
         
         if(direction.sqrMagnitude > 0.1f)
         {
-            transform.Translate(direction.normalized * speed * Time.deltaTime, Space.Self);
+            transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
         }
         else
         {
