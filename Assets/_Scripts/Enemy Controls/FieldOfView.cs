@@ -18,6 +18,10 @@ public class FieldOfView : MonoBehaviour
     void Start() {
         changingViewAngle = viewAngle;
     }
+
+    public float GetChangingViewAngle() {
+        return changingViewAngle;
+    }
     public bool FindVisibleTarget()
     {
         Collider[] targetInView = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
