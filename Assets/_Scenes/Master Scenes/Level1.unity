@@ -53409,6 +53409,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParentSpellTile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 395356257732138621, guid: bcf278bb40a09ad47ac9dd835843ce68,
+        type: 3}
+      propertyPath: creatorSpellCubeController
+      value: 
+      objectReference: {fileID: 1080978177}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcf278bb40a09ad47ac9dd835843ce68, type: 3}
 --- !u!4 &1921685821 stripped
