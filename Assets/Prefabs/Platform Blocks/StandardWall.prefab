@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3913831428374401107}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: StandardWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4861722497752425084}
   - component: {fileID: 4036644129479837528}
   - component: {fileID: 2677575431672922112}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Mesh1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8880023896254539704}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

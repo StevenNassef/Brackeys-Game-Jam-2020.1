@@ -34,6 +34,7 @@ namespace Player.Control
 		CapsuleCollider m_Capsule;
 
 		private Quaternion essentialRotation;
+		private float sqrDistanceFromScreen;
 
 		void Start()
 		{
@@ -50,6 +51,14 @@ namespace Player.Control
 
 		}
 
+		private void Update () {
+			sqrDistanceFromScreen = (transform.position - Camera.main.transform.position).sqrMagnitude;
+		}
+	
+		public float GetDistanceFromScreen()
+		{
+			return sqrDistanceFromScreen; 
+		}
 
 		public void Move(Vector3 move, bool jump)
 		{
