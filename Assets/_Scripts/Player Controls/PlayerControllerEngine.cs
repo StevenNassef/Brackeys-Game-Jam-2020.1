@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Player.Control
 {
@@ -15,6 +17,7 @@ namespace Player.Control
 		[SerializeField] float m_MoveSpeedMultiplier = 1f;
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
+		[SerializeField] float essentialRotationAngleInYAxis = 45.0f;
 
 		Rigidbody m_Rigidbody;
 		Animator m_Animator;
@@ -28,6 +31,7 @@ namespace Player.Control
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 
+		private Quaternion essentialRotation;
 
 		void Start()
 		{
@@ -39,6 +43,9 @@ namespace Player.Control
 
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
+
+			essentialRotation = Quaternion.Euler(0, essentialRotationAngleInYAxis, 0);
+
 		}
 
 
@@ -49,7 +56,10 @@ namespace Player.Control
 			// turn amount and forward amount required to head in the desired
 			// direction.
 			if (move.magnitude > 1f) move.Normalize();
+			
 			move = transform.InverseTransformDirection(move);
+			move = essentialRotation*move;
+
 			CheckGroundStatus();
 			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
 			m_TurnAmount = Mathf.Atan2(move.x, move.z);
