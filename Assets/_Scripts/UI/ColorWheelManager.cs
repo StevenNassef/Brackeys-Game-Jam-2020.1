@@ -65,6 +65,7 @@ public class ColorWheelManager : MonoBehaviour
         if(activated) {
             selectedColor = colorNum;
         }
+        Debug.Log("Selected Color is " + selectedColor);
     }
 
 }
