@@ -19,16 +19,16 @@ public class BreakableTile : MonoBehaviour
 
     private void Update() {
         if(broken) {
-            Instantiate(brokenTile, transform.position, transform.rotation);
-            Destroy(gameObject);
-            // float distanceTravelled = Mathf.Abs(initVerticalPosition - transform.position.y);
-            // if(distanceTravelled < fallingDistance) {
-            //     transform.Translate(Vector3.down * Time.deltaTime * fallingSpeed);
-            // } else {
-            //     FinalizeDestroyingTile();
-            //     // TODO Finalize Destroying maybe by pooling
-            //     destroyed = true;
-            // }
+            // Instantiate(brokenTile, transform.position, transform.rotation);
+            // Destroy(gameObject);
+            float distanceTravelled = Mathf.Abs(initVerticalPosition - transform.position.y);
+            if(distanceTravelled < fallingDistance) {
+                transform.Translate(Vector3.down * Time.deltaTime * fallingSpeed);
+            } else {
+                FinalizeDestroyingTile();
+                // TODO Finalize Destroying maybe by pooling
+                destroyed = true;
+            }
         }
     }
 
@@ -41,6 +41,7 @@ public class BreakableTile : MonoBehaviour
         if(other.gameObject.tag == "Player") {
             DestroyTile();
         }
+        Debug.Log("Check");
     }
 
     private void DestroyTile() {
