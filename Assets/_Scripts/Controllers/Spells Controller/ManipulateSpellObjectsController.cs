@@ -35,7 +35,7 @@ public class ManipulateSpellObjectsController : SpellLogicController
 
     private void move()
     {
-        Debug.Log(transform.eulerAngles);
+        // Debug.Log(transform.eulerAngles);
         // if ((transform.eulerAngles - initialRotation).sqrMagnitude > 10f)
         // {
         //     transform.Rotate(rotationAxis, speed * Time.deltaTime, Space.World);
