@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 4454423208594068344}
   - component: {fileID: 4454423208594068295}
   - component: {fileID: 4454423208594068294}
-  m_Layer: 15
+  m_Layer: 12
   m_Name: DummyCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4454423209006150716}
   - component: {fileID: 4454423209006150717}
-  m_Layer: 15
+  m_Layer: 12
   m_Name: Telekanisis Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,10 +182,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4454423209006150716}
     m_Modifications:
+    - target: {fileID: 540885795192744435, guid: bff1e0a944c9d454094e629fcaa5c487,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6646381054028045244, guid: bff1e0a944c9d454094e629fcaa5c487,
         type: 3}
       propertyPath: m_Name
       value: Telekinesis Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 6646381054028045244, guid: bff1e0a944c9d454094e629fcaa5c487,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7667353635858983343, guid: bff1e0a944c9d454094e629fcaa5c487,
         type: 3}
@@ -263,6 +273,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4454423209006150716}
     m_Modifications:
+    - target: {fileID: 395356256794817994, guid: bcf278bb40a09ad47ac9dd835843ce68,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 395356257732138616, guid: bcf278bb40a09ad47ac9dd835843ce68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -337,6 +352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ParentSpellTile (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 395356257732138620, guid: bcf278bb40a09ad47ac9dd835843ce68,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 395356257732138621, guid: bcf278bb40a09ad47ac9dd835843ce68,
         type: 3}
