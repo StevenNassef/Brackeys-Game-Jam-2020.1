@@ -27,7 +27,7 @@ public class ManipulateSpellObjectsController : MonoBehaviour
 
     private void move()
     {
-        if((transform.eulerAngles - initialRotation).sqrMagnitude > 0.1f)
+        if((transform.eulerAngles - initialRotation).sqrMagnitude > 5f)
         {
             transform.Rotate(rotationAxis, speed * Time.deltaTime, Space.World);
         }
