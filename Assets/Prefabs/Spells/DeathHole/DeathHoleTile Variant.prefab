@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HolePrefab: {fileID: 5770434681275847826, guid: 0e6eba5847d4c604597dad2667f4baad,
     type: 3}
+  mask:
+    serializedVersion: 2
+    m_Bits: 262144
 --- !u!1001 &4530672845382522048
 PrefabInstance:
   m_ObjectHideFlags: 0
