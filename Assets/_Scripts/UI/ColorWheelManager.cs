@@ -20,7 +20,8 @@ public class ColorWheelManager : MonoBehaviour
 
     private bool activated;
 
-    private SpellType selectedSpell;
+    private Spell selectedSpell;
+    [SerializeField] private List<Spell> spellList;
 
     // Update is called once per frame
     void Update()
@@ -53,9 +54,8 @@ public class ColorWheelManager : MonoBehaviour
         activated = false;
         animator.SetTrigger("Close");
         colorWheelObject.SetActive(false);
-
+        PlayerManager.instance.CurrentAnkhController.SetAnkhSpell(selectedSpell);
         // StartCoroutine("OnCompleteCloseWheelAnimation");
-
     }
     
     // IEnumerator OnCompleteCloseWheelAnimation()
@@ -67,7 +67,7 @@ public class ColorWheelManager : MonoBehaviour
 
     public void SelectColor(int colorNum) {
         if(activated) {
-            selectedSpell = (SpellType) colorNum;
+            selectedSpell = spellList[colorNum];
         }
         Debug.Log("Selected Color is " + selectedSpell);
     }

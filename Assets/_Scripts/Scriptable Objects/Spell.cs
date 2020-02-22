@@ -10,11 +10,12 @@ public class Spell : ScriptableObject
     [ColorUsage(true, true)] [SerializeField] private Color _spellColor;
     [SerializeField] private Texture _spellActivationSymbol;
     [SerializeField] private Texture _spellEffectSymbol;
-
+    [SerializeField] [TextArea] private string _description;
     public SpellType SpellType => _spellType;
     public Color SpellColor => _spellColor;
     public Texture SpellActivationSymbol => _spellActivationSymbol;
     public Texture SpellEffectSymbol => _spellEffectSymbol;
+    public string Description => _description;
 
 }
 
