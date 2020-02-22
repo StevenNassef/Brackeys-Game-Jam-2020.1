@@ -21,7 +21,7 @@
             // Disabling auto-braking allows for continuous movement
             // between points (ie, the agent doesn't slow down as it
             // approaches a destination point).
-            agent.autoBraking = false;
+            agent.autoBraking = true;
 
             GotoNextPoint();
         }
@@ -29,11 +29,10 @@
 
         void GotoNextPoint() {
             // Returns if no points have been set up
-            if (points.Length == 0){
+            if (points.Length == 0 || (points.Length == 1 && (points[0].transform.position -transform.position).magnitude < 0.5f)){
                 GetComponent<Animator>().SetBool("IsIdle", true);
                 return;
             }
-
             // Set the agent to go to the currently selected destination.
             agent.destination = points[destPoint].position;
             GetComponent<Animator>().SetBool("IsIdle", false);
