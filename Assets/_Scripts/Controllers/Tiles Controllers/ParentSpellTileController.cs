@@ -9,6 +9,8 @@ public class ParentSpellTileController : MonoBehaviour
     [SerializeField] private bool _isEffectTile;
 
     public UnityEvent MouseDown;
+    public UnityEvent MouseDrag;
+    public UnityEvent MouseUp;
     protected ParentSpellController spellController;
     protected Material _tileMaterial;
     protected SpellType spellType;
@@ -60,6 +62,22 @@ public class ParentSpellTileController : MonoBehaviour
         {
             Debug.Log("Spell Activated");
             MouseDown.Invoke();
+        }
+    }
+    private void OnMouseUp()
+    {
+        if (spellController.SpellActivated && _isEffectTile && MouseUp != null)
+        {
+            Debug.Log("Spell Activated");
+            MouseUp.Invoke();
+        }
+    }
+    private void OnMouseDrag()
+    {
+        if (spellController.SpellActivated && _isEffectTile && MouseDrag != null)
+        {
+            // Debug.Log("Spell Activated");
+            MouseDrag.Invoke();
         }
     }
 
