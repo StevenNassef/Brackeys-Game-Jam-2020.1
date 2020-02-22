@@ -27,10 +27,12 @@ public class InvisiblitySpellLogicController : SpellLogicController
         if (enable)
         {
             PlayerManager.instance.gameObject.tag = "InvisiblePlayer";
+            PlayerManager.instance.sheildGFX.SetActive(true);
         }
         else
         {
             PlayerManager.instance.gameObject.tag = "Player";
+            PlayerManager.instance.sheildGFX.SetActive(false);
         }
     }
     private IEnumerator DoThingsOverTimeInternal()
