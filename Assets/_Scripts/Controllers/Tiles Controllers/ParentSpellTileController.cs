@@ -7,13 +7,12 @@ public class ParentSpellTileController : MonoBehaviour
     [SerializeField] private GameObject _GFX;
     [SerializeField] private bool _isActivatingTile;
     [SerializeField] private bool _isEffectTile;
-
+    [SerializeField] protected SpellType spellType;
     public UnityEvent MouseDown;
     public UnityEvent MouseDrag;
     public UnityEvent MouseUp;
     protected ParentSpellController spellController;
     protected Material _tileMaterial;
-    protected SpellType spellType;
     void Start()
     {
         spellController = GetComponentInParent<ParentSpellController>();
@@ -85,8 +84,13 @@ public class ParentSpellTileController : MonoBehaviour
     {
         if (spellController == null)
         {
-            spellController = GetComponentInParent<ParentSpellController>();
+            // spellController = GetComponentInParent<ParentSpellController>();
         }
+        // switch (spellController):
+        // {
+
+        //     default:
+        // }
         spellController.OnSpellTileEnter += ActivateSpell;
         spellController.OnSpellTileExit += DeactivateSpell;
     }
