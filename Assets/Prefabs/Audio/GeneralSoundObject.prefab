@@ -700,3 +700,4 @@ MonoBehaviour:
   deathCharacterSound: {fileID: 8300000, guid: 679419bb5e5bc5e49989be9c99539dfb, type: 3}
   gruntCharacterSound: {fileID: 8300000, guid: 00d80aca646fcfd4b92841cf88a32c00, type: 3}
   colorSound: {fileID: 8300000, guid: a0fefcf4e3e79074a9392321c198f4ed, type: 3}
+  zombieSound: {fileID: 8300000, guid: 8496fdc950506d8449d7f3ee0857b837, type: 3}

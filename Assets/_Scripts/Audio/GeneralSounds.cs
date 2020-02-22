@@ -20,12 +20,18 @@ public class GeneralSounds : MonoBehaviour
     public AudioClip deathCharacterSound;
     public AudioClip gruntCharacterSound;
     public AudioClip colorSound;
+    public AudioClip zombieSound;
 
 
     // Start is called before the first frame update
     void Start()
     {
 
+    }
+
+    [ButtonMethod]
+    void playZombieSound() {
+        playBackground(zombieSound, true);
     }
 
     [ButtonMethod]
