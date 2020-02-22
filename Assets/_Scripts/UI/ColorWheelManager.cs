@@ -5,6 +5,10 @@ using UnityEngine;
 public class ColorWheelManager : MonoBehaviour
 {
 
+    public enum WheelColor {
+        Yellow, Green, Blue, Purple, Red, NoColor = -1
+    }
+
     public GameObject colorWheelObject;
     public Animator animator;
     public bool canActivate = true;
@@ -16,7 +20,7 @@ public class ColorWheelManager : MonoBehaviour
 
     private bool activated;
 
-    private int selectedColor;
+    private WheelColor selectedColor;
 
     // Update is called once per frame
     void Update()
@@ -63,7 +67,7 @@ public class ColorWheelManager : MonoBehaviour
 
     public void SelectColor(int colorNum) {
         if(activated) {
-            selectedColor = colorNum;
+            selectedColor = (WheelColor) colorNum;
         }
         Debug.Log("Selected Color is " + selectedColor);
     }
