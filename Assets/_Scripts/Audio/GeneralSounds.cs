@@ -17,12 +17,30 @@ public class GeneralSounds : MonoBehaviour
     public AudioClip cubeSound;
     public AudioClip tileActivateSound;
     public AudioClip portalSound;
+    public AudioClip deathCharacterSound;
+    public AudioClip gruntCharacterSound;
+    public AudioClip colorSound;
 
 
     // Start is called before the first frame update
     void Start()
     {
 
+    }
+
+    [ButtonMethod]
+    void playDeathSound() {
+        playBackground(deathCharacterSound, false);
+    }
+
+    [ButtonMethod]
+    void playGruntCharacterSound() {
+        playEffect(gruntCharacterSound, false);
+    }
+
+    [ButtonMethod]
+    void playColorSound() {
+        playEffect(colorSound, false);
     }
 
     [ButtonMethod]
