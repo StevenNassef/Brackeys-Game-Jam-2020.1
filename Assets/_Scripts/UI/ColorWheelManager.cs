@@ -5,9 +5,9 @@ using UnityEngine;
 public class ColorWheelManager : MonoBehaviour
 {
 
-    public enum WheelColor {
-        Yellow, Green, Blue, Purple, Red, NoColor = -1
-    }
+    // public enum SpellType {
+    //     Yellow, Green, Blue, Purple, Red, NoColor = -1
+    // }
 
     public GameObject colorWheelObject;
     public Animator animator;
@@ -20,7 +20,7 @@ public class ColorWheelManager : MonoBehaviour
 
     private bool activated;
 
-    private WheelColor selectedColor;
+    private SpellType selectedSpell;
 
     // Update is called once per frame
     void Update()
@@ -67,9 +67,9 @@ public class ColorWheelManager : MonoBehaviour
 
     public void SelectColor(int colorNum) {
         if(activated) {
-            selectedColor = (WheelColor) colorNum;
+            selectedSpell = (SpellType) colorNum;
         }
-        Debug.Log("Selected Color is " + selectedColor);
+        Debug.Log("Selected Color is " + selectedSpell);
     }
 
 }

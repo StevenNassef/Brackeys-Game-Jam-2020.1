@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(TilesSpawningWall))]
+// [RequireComponent(typeof(TilesSpawningWall))]
 public class FloatingTile : MonoBehaviour
 {
     public TilesSpawningWall tilesSendingHole;
