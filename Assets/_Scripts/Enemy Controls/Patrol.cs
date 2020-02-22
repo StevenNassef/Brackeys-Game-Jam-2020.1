@@ -2,7 +2,7 @@
     using UnityEngine;
     using UnityEngine.AI;
     using System.Collections;
-
+    using System;
 
     public class Patrol : MonoBehaviour {
 
@@ -13,6 +13,8 @@
         public GameObject target;
         private bool targetDetected = false;
         public float speedFactorChange = 2.0f;
+
+        public float deltaHeightThereshold = 0.5f;
         void Start () {
             agent = GetComponent<NavMeshAgent>();
             fov = GetComponent<FieldOfView>();
@@ -41,7 +43,9 @@
         void OnCollisionEnter(Collision other) {
             //Debug.Log("Gameover!");
             // Checking if the collision occurs with layer 11(Player) then gameover
-            if(other.gameObject.layer == 11) {
+
+            float deltaHeight = Math.Abs(other.transform.position.y - transform.position.y);
+            if(other.gameObject.CompareTag("Player") && deltaHeight < deltaHeightThereshold) {
                 // Call Gameover Logic
                 Debug.Log("Gameover!");
             }
