@@ -7698,6 +7698,7 @@ MonoBehaviour:
   _ankhController: {fileID: 508826743}
   _playerController: {fileID: 0}
   _playerAnimator: {fileID: 0}
+  _sheildGFX: {fileID: 0}
 --- !u!54 &1388702300
 Rigidbody:
   m_ObjectHideFlags: 0

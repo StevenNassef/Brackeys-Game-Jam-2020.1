@@ -26,20 +26,39 @@ public class ObjectsHider : MonoBehaviour
 
         //Cast a ray from this object's transform the the watch target's transform.
         RaycastHit[] hits = Physics.RaycastAll(
-        transform.position,
-        WatchTarget.transform.position - transform.position,
-        Vector3.Distance(WatchTarget.transform.position, transform.position),
-        OccluderMask
-        );
+            transform.position,
+            WatchTarget.transform.position - transform.position,
+            Vector3.Distance(WatchTarget.transform.position, transform.position),
+            OccluderMask
+            );
+
+        // Debug.DrawRay(
+        //     transform.position,
+        //     WatchTarget.transform.position - transform.position,
+        //     Color.blue,
+        //     OccluderMask
+        // );
 
         //Loop through all overlapping objects and disable their mesh renderer
         if(hits.Length > 0){
             foreach(RaycastHit hit in hits){
                 Renderer renderer = hit.collider.gameObject.GetComponent<Renderer>();
+                Debug.Log("gameobject = " + hit.collider.gameObject.name);
                 if(hit.collider.gameObject.transform != WatchTarget && hit.collider.transform.root != WatchTarget){
                     _LastTransforms.Add(hit.collider.gameObject.transform, renderer.material);
                     renderer.material = HiderMaterial;
                 }
+
+                // Transform parent = hit.collider.gameObject.transform.parent;
+
+                // for (int i = 0; i < parent.childCount; i++)
+                // {
+                //     Renderer renderer = parent.GetChild(i).gameObject.GetComponent<Renderer>();
+                //     if(hit.collider.gameObject.transform != WatchTarget && hit.collider.transform.root != WatchTarget){
+                //     _LastTransforms.Add(hit.collider.gameObject.transform, renderer.material);
+                //     renderer.material = HiderMaterial;
+                //     }
+                // }
             }
         }
     }

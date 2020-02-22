@@ -7,6 +7,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private AnkhController _ankhController;
     [SerializeField] private PlayerControllerEngine _playerController;
     [SerializeField] private Animator _playerAnimator;
+    [SerializeField] private GameObject _sheildGFX;
+    public GameObject sheildGFX => _sheildGFX;
     private static PlayerManager _instance;
     public static PlayerManager instance => _instance;
     void Awake()
