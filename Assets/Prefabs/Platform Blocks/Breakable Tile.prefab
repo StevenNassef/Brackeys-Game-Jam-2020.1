@@ -125,7 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889d21b5d9d6bf14aa9fd6bc959630b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenTile: {fileID: 0}
+  brokenTile: {fileID: 2422218349640836320, guid: 4165dd420b6dafa428ef3a77c6ce096b,
+    type: 3}
   fallingDistance: 2
   fallingSpeed: 5
 --- !u!65 &8436788707843406116
