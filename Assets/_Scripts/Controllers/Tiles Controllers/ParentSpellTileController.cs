@@ -15,6 +15,7 @@ public class ParentSpellTileController : MonoBehaviour
     [ConditionalField(nameof(spellType), false, SpellType.Telekinesis)] [SerializeField] private TelekanisisCubeController telekanisisCubeController;
     [ConditionalField(nameof(spellType), false, SpellType.Manipulator)] [SerializeField] private ManipulateSpellObjectsController manipulateSpellObjectsController;
     [ConditionalField(nameof(spellType), false, SpellType.Creator)] [SerializeField] private CreatorSpellCubeController creatorSpellCubeController;
+    [ConditionalField(nameof(spellType), false, SpellType.Soul_Shifter)] [SerializeField] private InvisiblitySpellLogicController invisiblitySpellLogicController;
 
 
     private SpellLogicController currentSpellLogic;
@@ -76,6 +77,7 @@ public class ParentSpellTileController : MonoBehaviour
                     spellController = ManipulatorSpellParent.instance;
                     break;
                 case SpellType.Soul_Shifter:
+                    currentSpellLogic = invisiblitySpellLogicController;
                     spellController = InvisiblitySpellParent.instance;
                     break;
                 case SpellType.Telekinesis:
@@ -183,7 +185,7 @@ public class ParentSpellTileController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_isActivatingTile && (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy")))
+        if (_isActivatingTile && (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("InvisiblePlayer")))
         {
             Spell currentSpell = PlayerManager.instance.CurrentAnkhController.CurrentAnkhSpell;
 
@@ -196,7 +198,7 @@ public class ParentSpellTileController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (_isActivatingTile && (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy")))
+        if (_isActivatingTile && (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("InvisiblePlayer")))
         {
             Spell currentSpell = PlayerManager.instance.CurrentAnkhController.CurrentAnkhSpell;
 
