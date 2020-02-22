@@ -1,21 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using MyBox;
+
 public class ParentSpellTileController : MonoBehaviour
 {
     [SerializeField] private GameObject _GFX;
     [SerializeField] private bool _isActivatingTile;
     [SerializeField] private bool _isEffectTile;
+
+    [Space(20)]
+    [Separator("Spell Type")]
     [SerializeField] protected SpellType spellType;
-    public UnityEvent MouseDown;
-    public UnityEvent MouseDrag;
-    public UnityEvent MouseUp;
+    [ConditionalField(nameof(spellType), false, SpellType.Telekinesis)] [SerializeField] private TelekanisisCubeController telekanisisCubeController;
+    [ConditionalField(nameof(spellType), false, SpellType.Manipulator)] [SerializeField] private ManipulateSpellObjectsController manipulateSpellObjectsController;
+    [ConditionalField(nameof(spellType), false, SpellType.Creator)] [SerializeField] private CreatorSpellCubeController creatorSpellCubeController;
+
+
+    private SpellLogicController currentSpellLogic;
+
+
+    // public UnityEvent MouseDown;
+    // public UnityEvent MouseDrag;
+    // public UnityEvent MouseUp;
+    public delegate void OnSpellTileEvent();
+    // public event OnSpellTileEvent MouseDown;
+    // public event OnSpellTileEvent MouseUp;
+    // public event OnSpellTileEvent MouseDrag;
+
+
     protected ParentSpellController spellController;
     protected Material _tileMaterial;
     void Start()
     {
-        spellController = GetComponentInParent<ParentSpellController>();
+        // spellController = GetComponentInParent<ParentSpellController>();
+        SelectSpell();
         _tileMaterial = _GFX.GetComponent<MeshRenderer>().material;
         SetTileColor(spellController.CurrentSpell.SpellColor);
         spellType = spellController.CurrentSpell.SpellType;
@@ -30,6 +49,71 @@ public class ParentSpellTileController : MonoBehaviour
     void Update()
     {
 
+    }
+    private void SelectSpell()
+    {
+        if (spellController != null)
+        {
+            spellController.OnSpellTileEnter -= ActivateSpell;
+            spellController.OnSpellTileExit -= DeactivateSpell;
+        }
+
+        if (_isEffectTile)
+        {
+            switch (spellType)
+            {
+                case SpellType.Creator:
+                    // print("creator");
+                    // print(CreatorSpellParent.instance);
+                    currentSpellLogic = creatorSpellCubeController;
+                    spellController = CreatorSpellParent.instance;
+                    break;
+                case SpellType.Death_Hole:
+                    spellController = DeathHoleSpellParent.instance;
+                    break;
+                case SpellType.Manipulator:
+                    currentSpellLogic = manipulateSpellObjectsController;
+                    spellController = ManipulatorSpellParent.instance;
+                    break;
+                case SpellType.Soul_Shifter:
+                    spellController = InvisiblitySpellParent.instance;
+                    break;
+                case SpellType.Telekinesis:
+                    currentSpellLogic = telekanisisCubeController;
+                    spellController = TelekanisisSpellParent.instance;
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            switch (spellType)
+            {
+                case SpellType.Creator:
+                    // print("creator");
+                    // print(CreatorSpellParent.instance);
+                    spellController = CreatorSpellParent.instance;
+                    break;
+                case SpellType.Death_Hole:
+                    spellController = DeathHoleSpellParent.instance;
+                    break;
+                case SpellType.Manipulator:
+                    spellController = ManipulatorSpellParent.instance;
+                    break;
+                case SpellType.Soul_Shifter:
+                    spellController = InvisiblitySpellParent.instance;
+                    break;
+                case SpellType.Telekinesis:
+                    spellController = TelekanisisSpellParent.instance;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        spellController.OnSpellTileEnter += ActivateSpell;
+        spellController.OnSpellTileExit += DeactivateSpell;
     }
 
     protected void SetTileColor(Color color)
@@ -57,26 +141,34 @@ public class ParentSpellTileController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (spellController.SpellActivated && _isEffectTile && MouseDown != null)
+        if (spellController.SpellActivated && _isEffectTile)
         {
             Debug.Log("Spell Activated");
-            MouseDown.Invoke();
+            currentSpellLogic.SpellTileMouseDown();
         }
     }
     private void OnMouseUp()
     {
-        if (spellController.SpellActivated && _isEffectTile && MouseUp != null)
+        if (spellController.SpellActivated && _isEffectTile)
         {
             Debug.Log("Spell Activated");
-            MouseUp.Invoke();
+            currentSpellLogic.SpellTileMouseUp();
         }
     }
     private void OnMouseDrag()
     {
-        if (spellController.SpellActivated && _isEffectTile && MouseDrag != null)
+        if (spellController.SpellActivated && _isEffectTile)
         {
             // Debug.Log("Spell Activated");
-            MouseDrag.Invoke();
+            currentSpellLogic.SpellTileMouseDrag();
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (spellController == null)
+        {
+            SelectSpell();
         }
     }
 
@@ -84,15 +176,8 @@ public class ParentSpellTileController : MonoBehaviour
     {
         if (spellController == null)
         {
-            // spellController = GetComponentInParent<ParentSpellController>();
+            SelectSpell();
         }
-        // switch (spellController):
-        // {
-
-        //     default:
-        // }
-        spellController.OnSpellTileEnter += ActivateSpell;
-        spellController.OnSpellTileExit += DeactivateSpell;
     }
 
     private void OnTriggerEnter(Collider other)

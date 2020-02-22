@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TelekanisisCubeController : MonoBehaviour
+public class TelekanisisCubeController : SpellLogicController
 {
     [SerializeField] GameObject dummyCube;
     [SerializeField] TelekanisiDummyCube dummyCubeController;
@@ -17,7 +17,7 @@ public class TelekanisisCubeController : MonoBehaviour
 
     }
 
-    public void MouseUpFromCube()
+    public override void SpellTileMouseUp()
     {
         if(dummyCubeController.isSafe)
         {
@@ -27,7 +27,7 @@ public class TelekanisisCubeController : MonoBehaviour
         dummyCube.transform.position = transform.position;
     }
 
-    public void MouseDownOnCube()
+    public override  void SpellTileMouseDown()
     {
         dummyCube.SetActive(true);
     }
