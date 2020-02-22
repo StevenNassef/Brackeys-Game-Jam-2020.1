@@ -181,12 +181,12 @@ namespace Player.Control
 
 // #endif
 			Vector3 startVector = (transform.position + (Vector3.up * raycastCheckGroundOffset));
-			Debug.Log("StartVector " + startVector);
+			//Debug.Log("StartVector " + startVector);
 
 			Vector3 endVector = (transform.position +
 								(Vector3.up * raycastCheckGroundOffset) +
 								(Vector3.down * m_GroundCheckDistance));
-			Debug.Log("EndVector " + startVector);
+			//Debug.Log("EndVector " + startVector);
 
 			Debug.DrawRay(startVector,
 				endVector,
