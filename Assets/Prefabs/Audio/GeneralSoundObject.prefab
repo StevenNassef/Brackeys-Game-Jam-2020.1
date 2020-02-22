@@ -697,3 +697,6 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: ed060c51408e88346978df31077aefc8, type: 3}
   tileActivateSound: {fileID: 8300000, guid: 5a6729eadd4d9c345b9600b70847a81a, type: 3}
   portalSound: {fileID: 8300000, guid: 40fd5a23156cc4344a6a00efc7b52d88, type: 3}
+  deathCharacterSound: {fileID: 8300000, guid: 679419bb5e5bc5e49989be9c99539dfb, type: 3}
+  gruntCharacterSound: {fileID: 8300000, guid: 00d80aca646fcfd4b92841cf88a32c00, type: 3}
+  colorSound: {fileID: 8300000, guid: a0fefcf4e3e79074a9392321c198f4ed, type: 3}
