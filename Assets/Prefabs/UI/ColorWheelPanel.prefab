@@ -988,6 +988,12 @@ MonoBehaviour:
   yScale: 0.4
   initXScale: 0.01
   initYScale: 0.01
+  spellList:
+  - {fileID: 11400000, guid: 6f513fc136529de479206208de51994c, type: 2}
+  - {fileID: 11400000, guid: cf822b0ea8d2bef49a18fd6113e719a4, type: 2}
+  - {fileID: 11400000, guid: 867ef7e513e0506479b4c05db1e5fb77, type: 2}
+  - {fileID: 11400000, guid: d64e58f29c6cbbf4fa9c05c484c9bc14, type: 2}
+  - {fileID: 11400000, guid: 3f63a3667168cbc41a7fd313ff3352cd, type: 2}
 --- !u!222 &8327168584762080296
 CanvasRenderer:
   m_ObjectHideFlags: 0

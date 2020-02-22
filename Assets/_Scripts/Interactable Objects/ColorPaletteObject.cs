@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorPaletteoObject : MonoBehaviour
+public class ColorPaletteObject : MonoBehaviour
 {
     private const string PLAYER_TAG = "Player";
-    private ColorWheelManager colorWheelManager;
+    [SerializeField] private ColorWheelManager colorWheelManager;
     // Start is called before the first frame update
     void Start()
     {
         colorWheelManager = FindObjectOfType<ColorWheelManager>();
         if(colorWheelManager != null) {
-            Debug.Log("Color Wheel Manager registered");
+            // Debug.Log("Color Wheel Manager registered");
         }
     }
 
@@ -19,14 +19,14 @@ public class ColorPaletteoObject : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.tag == PLAYER_TAG) {
             colorWheelManager.canActivate = true;
-            Debug.Log("Activate WheelManager");
+            // Debug.Log("Activate WheelManager");
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if(other.tag == PLAYER_TAG) {
             colorWheelManager.canActivate = false;
-            Debug.Log("Deactivate WheelManager");
+            // Debug.Log("Deactivate WheelManager");
         }    
     }
 
