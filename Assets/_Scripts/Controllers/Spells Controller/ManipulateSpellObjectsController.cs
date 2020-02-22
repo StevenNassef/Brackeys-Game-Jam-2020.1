@@ -15,7 +15,7 @@ public class ManipulateSpellObjectsController : SpellLogicController
         initialRotation = transform.eulerAngles;
         initialRotationQuat = transform.localRotation;
 
-        Debug.Log(initialRotation);
+        //Debug.Log(initialRotation);
     }
 
     // Update is called once per frame

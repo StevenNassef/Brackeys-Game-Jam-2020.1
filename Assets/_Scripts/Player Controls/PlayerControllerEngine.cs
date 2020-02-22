@@ -168,20 +168,33 @@ namespace Player.Control
 		[ExecuteInEditMode]
 		void CheckGroundStatus()
 		{
+			// Debug.DrawLine(new Vector3(200,200,200), Vector3.zero, Color.green, 2, false);
 			RaycastHit hitInfo;
-#if UNITY_EDITOR
-			// helper to visualise the ground check ray in the scene view
-			Debug.DrawLine(transform.position + (Vector3.up * raycastCheckGroundOffset),
-				transform.position + (Vector3.up * raycastCheckGroundOffset) + (Vector3.down * m_GroundCheckDistance));
+// #if UNITY_EDITOR
 
-#endif
-			// Debug.DrawLine(transform.position + (Vector3.up * raycastCheckGroundOffset),
-			// 	transform.position + (Vector3.up * raycastCheckGroundOffset) + (Vector3.down * m_GroundCheckDistance),
-			// 	Color.red, 2, false);
-			
+// 			// helper to visualise the ground check ray in the scene view
+// 			Debug.DrawRay((transform.position + (Vector3.up * raycastCheckGroundOffset))*essentialRotationAngleInYAxis,
+// 						(transform.position +
+// 						(Vector3.up * raycastCheckGroundOffset) +
+// 						(Vector3.down * m_GroundCheckDistance))*essentialRotationAngleInYAxis,
+// 						Color.green, 2, true);
+
+// #endif
+			Vector3 startVector = (transform.position + (Vector3.up * raycastCheckGroundOffset));
+			// Debug.Log("StartVector " + startVector);
+
+			Vector3 endVector = (transform.position +
+								(Vector3.up * raycastCheckGroundOffset) +
+								(Vector3.down * m_GroundCheckDistance));
+			// Debug.Log("EndVector " + startVector);
+
+			Debug.DrawRay(startVector,
+				endVector,
+				Color.green, 2, true);
+
 			// 0.1f is a small offset to start the ray from inside the character
 			// it is also good to note that the transform position in the sample assets is at the base of the character
-			if (Physics.Raycast(transform.position + (Vector3.up * raycastCheckGroundOffset), Vector3.down,
+			if (Physics.Raycast(startVector, Vector3.down,
 				 out hitInfo, m_GroundCheckDistance))
 			{
 				m_GroundNormal = hitInfo.normal;

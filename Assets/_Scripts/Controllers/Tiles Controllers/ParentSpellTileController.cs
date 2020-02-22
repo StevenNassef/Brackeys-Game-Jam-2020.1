@@ -145,6 +145,7 @@ public class ParentSpellTileController : MonoBehaviour
         {
             Debug.Log("Spell Activated");
             currentSpellLogic.SpellTileMouseDown();
+            PlayerManager.instance.TriggerSpellAnimation();
         }
     }
     private void OnMouseUp()
