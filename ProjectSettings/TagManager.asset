@@ -7,6 +7,8 @@ TagManager:
   - Fire
   - PlayerCamera
   - TilePassingWall
+  - InvisiblePlayer
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -25,8 +27,7 @@ TagManager:
   - Telekanisis
   - Floating Tiles
   - Spells
-  - 
-  - 
+  - Walls
   - 
   - 
   - 
