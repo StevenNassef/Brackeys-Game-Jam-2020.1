@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Manipulator
   m_EditorClassIdentifier: 
   _spellType: 3
-  _spellColor: {r: 3.9999995, g: 3.4840736, b: 0, a: 0}
+  _spellColor: {r: 3.9999995, g: 3.4840736, b: 0, a: 0.36862746}
   _spellActivationSymbol: {fileID: 2800000, guid: 65bf3b1a8f8c6ec4aa2817ee20ca650d,
     type: 3}
   _spellEffectSymbol: {fileID: 2800000, guid: f1cb95d2db7ce874e8d57b62d89a03c8, type: 3}

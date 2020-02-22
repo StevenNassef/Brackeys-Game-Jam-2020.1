@@ -2,30 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreatorSpellCubeController : MonoBehaviour
+public class CreatorSpellCubeController : SpellLogicController
 {
-    [SerializeField] private Transform target;
-    [SerializeField] private float speed;
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        MoveCube();   
-    }
+    [SerializeField] private MoveToTarget moveToTargetScript;
 
-    private void MoveCube()
+    public override void SpellTileMouseDown()
     {
-        Vector3 direction = target.localPosition - transform.localPosition;
-        
-        if(direction.sqrMagnitude > 0.1f)
-        {
-            transform.Translate(direction.normalized * speed * Time.deltaTime, Space.Self);
-        }
-        else
-        {
-            transform.position = target.position;
-        }
+        moveToTargetScript.enabled = true;
     }
 }
