@@ -29,8 +29,10 @@
 
         void GotoNextPoint() {
             // Returns if no points have been set up
-            if (points.Length == 0)
+            if (points.Length == 0){
+                GetComponent<Animator>().SetBool("IsIdle", true);
                 return;
+            }
 
             // Set the agent to go to the currently selected destination.
             agent.destination = points[destPoint].position;
