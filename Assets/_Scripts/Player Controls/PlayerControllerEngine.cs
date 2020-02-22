@@ -7,6 +7,7 @@ namespace Player.Control
 	[RequireComponent(typeof(Rigidbody))]
 	[RequireComponent(typeof(CapsuleCollider))]
 	[RequireComponent(typeof(Animator))]
+	[ExecuteInEditMode]
     public class PlayerControllerEngine : MonoBehaviour
     {
         [SerializeField] float m_MovingTurnSpeed = 360;
@@ -18,6 +19,7 @@ namespace Player.Control
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
 		[SerializeField] float essentialRotationAngleInYAxis = 45.0f;
+		[SerializeField] float raycastCheckGroundOffset = 0.05f;
 
 		Rigidbody m_Rigidbody;
 		Animator m_Animator;
@@ -163,17 +165,24 @@ namespace Player.Control
 			}
 		}
 
-
+		[ExecuteInEditMode]
 		void CheckGroundStatus()
 		{
 			RaycastHit hitInfo;
 #if UNITY_EDITOR
 			// helper to visualise the ground check ray in the scene view
-			Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * m_GroundCheckDistance));
+			Debug.DrawLine(transform.position + (Vector3.up * raycastCheckGroundOffset),
+				transform.position + (Vector3.up * raycastCheckGroundOffset) + (Vector3.down * m_GroundCheckDistance));
+
 #endif
+			// Debug.DrawLine(transform.position + (Vector3.up * raycastCheckGroundOffset),
+			// 	transform.position + (Vector3.up * raycastCheckGroundOffset) + (Vector3.down * m_GroundCheckDistance),
+			// 	Color.red, 2, false);
+			
 			// 0.1f is a small offset to start the ray from inside the character
 			// it is also good to note that the transform position in the sample assets is at the base of the character
-			if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
+			if (Physics.Raycast(transform.position + (Vector3.up * raycastCheckGroundOffset), Vector3.down,
+				 out hitInfo, m_GroundCheckDistance))
 			{
 				m_GroundNormal = hitInfo.normal;
 				m_IsGrounded = true;
