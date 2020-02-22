@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - PlayerCamera
+  - TilePassingWall
   layers:
   - Default
   - TransparentFX
@@ -18,11 +19,12 @@ TagManager:
   - Post Processing
   - PlayerViewLayer
   - StrategyViewLayer
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Obstacle
+  - PlayerInvisiblity
+  - Telekanisis
+  - Floating Tiles
+  - Spells
   - 
   - 
   - 
