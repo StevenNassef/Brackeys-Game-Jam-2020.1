@@ -16,6 +16,7 @@ public class ParentSpellTileController : MonoBehaviour
     [ConditionalField(nameof(spellType), false, SpellType.Manipulator)] [SerializeField] private ManipulateSpellObjectsController manipulateSpellObjectsController;
     [ConditionalField(nameof(spellType), false, SpellType.Creator)] [SerializeField] private CreatorSpellCubeController creatorSpellCubeController;
     [ConditionalField(nameof(spellType), false, SpellType.Soul_Shifter)] [SerializeField] private InvisiblitySpellLogicController invisiblitySpellLogicController;
+    [ConditionalField(nameof(spellType), false, SpellType.Death_Hole)] [SerializeField] private DeathHoleLogicController deathSpellLogicController;
 
 
     private SpellLogicController currentSpellLogic;
@@ -70,6 +71,7 @@ public class ParentSpellTileController : MonoBehaviour
                     spellController = CreatorSpellParent.instance;
                     break;
                 case SpellType.Death_Hole:
+                    currentSpellLogic = deathSpellLogicController;
                     spellController = DeathHoleSpellParent.instance;
                     break;
                 case SpellType.Manipulator:
