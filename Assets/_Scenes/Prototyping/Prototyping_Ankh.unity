@@ -7074,6 +7074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ankhController: {fileID: 508826743}
   _playerController: {fileID: 0}
+  _playerAnimator: {fileID: 0}
 --- !u!54 &1388702300
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11385,6 +11386,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1657426035255960762, guid: 8666d5779de71f44898e5e4527103746,
+        type: 3}
+      propertyPath: spellType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657426035255960763, guid: 8666d5779de71f44898e5e4527103746,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4468866811642635565, guid: 8666d5779de71f44898e5e4527103746,
         type: 3}
       propertyPath: m_Name
@@ -11393,7 +11404,7 @@ PrefabInstance:
     - target: {fileID: 4468866811642635566, guid: 8666d5779de71f44898e5e4527103746,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4468866811642635566, guid: 8666d5779de71f44898e5e4527103746,
         type: 3}
@@ -11403,7 +11414,7 @@ PrefabInstance:
     - target: {fileID: 4468866811642635566, guid: 8666d5779de71f44898e5e4527103746,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19
+      value: 16.99
       objectReference: {fileID: 0}
     - target: {fileID: 4468866811642635566, guid: 8666d5779de71f44898e5e4527103746,
         type: 3}
