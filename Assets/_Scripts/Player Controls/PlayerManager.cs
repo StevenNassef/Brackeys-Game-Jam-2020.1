@@ -6,7 +6,9 @@ public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private AnkhController _ankhController;
     [SerializeField] private PlayerControllerEngine _playerController;
-    
+    [SerializeField] private Animator _playerAnimator;
+    [SerializeField] private GameObject _sheildGFX;
+    public GameObject sheildGFX => _sheildGFX;
     private static PlayerManager _instance;
     public static PlayerManager instance => _instance;
     void Awake()
@@ -26,12 +28,38 @@ public class PlayerManager : MonoBehaviour
             Destroy(this);
         }
     }
+    public void TriggerSpellAnimation()
+    {
+        string triggerName = "";
+        switch (_ankhController.CurrentAnkhSpell.SpellType)
+        {
 
+            case SpellType.Manipulator:
+                triggerName = "RotateSign";
+                break;
+            case SpellType.Death_Hole:
+                triggerName = "HoleSign";
+                break;
+            case SpellType.Soul_Shifter:
+                triggerName = "InvisibleSign";
+                break;
+            case SpellType.Creator:
+                triggerName = "CreateSign";
+                break;
+            case SpellType.Telekinesis:
+                triggerName = "TeleSign";
+                break;
+            default:
+                break;
+        }
+        _playerAnimator.SetBool(triggerName, true);
+
+    }
 
     public AnkhController CurrentAnkhController => _ankhController;
     void Start()
     {
-
+        _playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
