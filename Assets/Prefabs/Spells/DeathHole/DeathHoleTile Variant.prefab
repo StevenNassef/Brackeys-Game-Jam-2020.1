@@ -79,7 +79,7 @@ PrefabInstance:
     - target: {fileID: 395356257732138620, guid: bcf278bb40a09ad47ac9dd835843ce68,
         type: 3}
       propertyPath: m_Name
-      value: DeathHoleTile
+      value: DeathHoleTile Variant
       objectReference: {fileID: 0}
     - target: {fileID: 395356257732138621, guid: bcf278bb40a09ad47ac9dd835843ce68,
         type: 3}
@@ -91,6 +91,11 @@ PrefabInstance:
       propertyPath: deathSpellLogicController
       value: 
       objectReference: {fileID: 1558840144}
+    - target: {fileID: 395356257732138621, guid: bcf278bb40a09ad47ac9dd835843ce68,
+        type: 3}
+      propertyPath: _isEffectTile
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcf278bb40a09ad47ac9dd835843ce68, type: 3}
 --- !u!1 &4295511112735163068 stripped
