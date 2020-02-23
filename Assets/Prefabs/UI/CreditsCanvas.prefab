@@ -349,7 +349,8 @@ MonoBehaviour:
     Game Artist
 
 
-    3D Modeler & Animator'
+    3D Modeler
+    & Animator'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -529,7 +530,7 @@ Animator:
   m_GameObject: {fileID: 2774287358027089323}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4109a325a507dd645921348d5880c51d, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -612,7 +613,8 @@ MonoBehaviour:
     Noura Maheeb
 
 
-    Moshira Hassan'
+    Moshira
+    Hassan'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
