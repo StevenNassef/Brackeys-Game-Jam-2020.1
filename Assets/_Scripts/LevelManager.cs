@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour
         switch (level)
         {
             case 1:
-                PlayerManager.instance.soundManage.playMusicPart3();
+                PlayerManager.instance.soundManage.playMusicPart2();
                 break;
             case 2:
                 PlayerManager.instance.soundManage.playMusicPart4();

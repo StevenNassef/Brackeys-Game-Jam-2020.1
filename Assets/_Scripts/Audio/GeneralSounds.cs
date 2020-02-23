@@ -82,19 +82,19 @@ public class GeneralSounds : MonoBehaviour
 
     [ButtonMethod]
     public void playMusicPart1() {
-        playMusic(musicTrack1, false);
+        playMusic(musicTrack1, true);
     }
     [ButtonMethod]
     public void playMusicPart2() {
-        playMusic(musicTrack2, false);
+        playMusic(musicTrack2, true);
     }
     [ButtonMethod]
     public void playMusicPart3() {
-        playMusic(musicTrack3, false);
+        playMusic(musicTrack3, true);
     }
     [ButtonMethod]
     public void playMusicPart4() {
-        playMusic(musicTrack4, false);
+        playMusic(musicTrack4, true);
     }
 
     public void playEffect(AudioClip clip, bool loop) {
