@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/_Scenes/Master Scenes/StartMenu.unity
+    guid: b25387f9be1cca6479a5ec3363461897
+  - enabled: 1
+    path: Assets/_Scenes/Master Scenes/StoryTeller.unity
+    guid: a5e50b4102e14f9499303ab812cc6671
+  - enabled: 1
     path: Assets/_Scenes/Master Scenes/Level1.unity
     guid: ac3fcfbdbcc4b394fbd47e6aae0ddc26
   - enabled: 1
     path: Assets/_Scenes/Master Scenes/Level2.unity
     guid: 119c7acbeebb4c84290a0b95fba83d04
+  - enabled: 1
+    path: Assets/_Scenes/Master Scenes/Credits.unity
+    guid: b497c2f273793ac48b382fc5cb193b6e
   m_configObjects: {}

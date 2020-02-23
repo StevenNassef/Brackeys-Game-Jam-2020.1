@@ -27,13 +27,16 @@ public class LevelManager : MonoBehaviour
     }
     void Start()
     {
-        if (level == 1)
+        switch (level)
         {
-            PlayerManager.instance.soundManage.playMusicPart3();
-        }
-        else
-        {
-            PlayerManager.instance.soundManage.playMusicPart4();
+            case 1:
+                PlayerManager.instance.soundManage.playMusicPart3();
+                break;
+            case 2:
+                PlayerManager.instance.soundManage.playMusicPart4();
+                break;
+            default:
+                break;
         }
     }
 
@@ -47,7 +50,7 @@ public class LevelManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("InvisiblePlayer"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            NextScene();
         }
     }
 
@@ -57,6 +60,11 @@ public class LevelManager : MonoBehaviour
         {
             GameOver();
         }
+    }
+    public void NextScene()
+    {
+        Debug.Log("next");
+        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
     }
 
     public void GameOver()
