@@ -21,6 +21,7 @@ public class HoleController : MonoBehaviour
     {
         initialPosition = transform.position;
         initialScale = transform.localScale;
+        PlayerManager.instance.soundManage.playPortalSound();
         spellEffect.SetVector4("Color", currentSpell.SpellColor);
     }
 

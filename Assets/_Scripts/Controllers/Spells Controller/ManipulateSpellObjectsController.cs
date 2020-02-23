@@ -29,7 +29,7 @@ public class ManipulateSpellObjectsController : SpellLogicController
     }
     private void TriggerMovement()
     {
-        
+        PlayerManager.instance.soundManage.playCubeSound();
         initialRotationQuat = Quaternion.AngleAxis(rotationIncrements, rotationAxis) * transform.rotation;
     }
 

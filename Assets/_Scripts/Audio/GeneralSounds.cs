@@ -52,7 +52,7 @@ public class GeneralSounds : MonoBehaviour
 
     [ButtonMethod]
     public void playGruntCharacterSound() {
-        playEffect(gruntCharacterSound, false);
+        playBackground(gruntCharacterSound, false);
     }
 
     [ButtonMethod]

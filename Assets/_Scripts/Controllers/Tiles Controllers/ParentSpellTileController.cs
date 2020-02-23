@@ -154,7 +154,6 @@ public class ParentSpellTileController : MonoBehaviour
             }
             currentSpellLogic.SpellTileMouseDown();
             PlayerManager.instance.TriggerSpellAnimation();
-
         }
     }
     private void OnMouseUp()
@@ -199,6 +198,7 @@ public class ParentSpellTileController : MonoBehaviour
             if (currentSpell != null && currentSpell.SpellType == spellType)
             {
                 spellController.SpellEnter(other);
+                PlayerManager.instance.soundManage.playTileActivateSound();
             }
         }
     }
