@@ -12,7 +12,12 @@ public class GeneralSounds : MonoBehaviour
     public GameObject background;
     public GameObject effect;
 
-    public AudioClip musicTrack;
+    public AudioClip musicTrackFull;
+    public AudioClip musicTrack1;
+    public AudioClip musicTrack2;
+    public AudioClip musicTrack3;
+    public AudioClip musicTrack4;
+
 
     public AudioClip cubeSound;
     public AudioClip tileActivateSound;
@@ -21,12 +26,18 @@ public class GeneralSounds : MonoBehaviour
     public AudioClip gruntCharacterSound;
     public AudioClip colorSound;
     public AudioClip zombieSound;
+    public AudioClip zombieOneShotSound;
 
 
     // Start is called before the first frame update
     void Start()
     {
 
+    }
+
+    [ButtonMethod]
+    public void playZombieOneShotSound() {
+        playEffect(zombieOneShotSound, false);
     }
 
     [ButtonMethod]
@@ -65,8 +76,25 @@ public class GeneralSounds : MonoBehaviour
     }
 
     [ButtonMethod]
-    public void playMusic() {
-        playMusic(musicTrack, true);
+    public void playMusicFull() {
+        playMusic(musicTrackFull, true);
+    }
+
+    [ButtonMethod]
+    public void playMusicPart1() {
+        playMusic(musicTrack1, false);
+    }
+    [ButtonMethod]
+    public void playMusicPart2() {
+        playMusic(musicTrack2, false);
+    }
+    [ButtonMethod]
+    public void playMusicPart3() {
+        playMusic(musicTrack3, false);
+    }
+    [ButtonMethod]
+    public void playMusicPart4() {
+        playMusic(musicTrack4, false);
     }
 
     public void playEffect(AudioClip clip, bool loop) {
