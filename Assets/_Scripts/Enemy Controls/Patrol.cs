@@ -14,6 +14,8 @@
         private bool targetDetected = false;
         public float speedFactorChange = 2.0f;
         public float deltaHeightThereshold = 0.5f;
+
+        public GameObject soundObject;
         void Start () {
             agent = GetComponent<NavMeshAgent>();
             fov = GetComponent<FieldOfView>();
@@ -22,6 +24,8 @@
             // between points (ie, the agent doesn't slow down as it
             // approaches a destination point).
             agent.autoBraking = true;
+
+            soundObject.GetComponent<GeneralSounds>().playZombieSound();
 
             GotoNextPoint();
         }
