@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 171079031}
   - component: {fileID: 171079032}
   m_Layer: 0
-  m_Name: broken tile
+  m_Name: BreakableTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 7183597675817436666, guid: cafdd40d50f595d4290e8df344f0b9ee, type: 3}
-  - {fileID: -8432146271385396827, guid: cafdd40d50f595d4290e8df344f0b9ee, type: 3}
+  - {fileID: 2100000, guid: 65357b421e220504c95f29e4cd28799e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
