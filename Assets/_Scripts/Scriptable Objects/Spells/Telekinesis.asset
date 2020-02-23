@@ -17,5 +17,5 @@ MonoBehaviour:
   _spellActivationSymbol: {fileID: 2800000, guid: 65bf3b1a8f8c6ec4aa2817ee20ca650d,
     type: 3}
   _spellEffectSymbol: {fileID: 2800000, guid: 23d7d3619ede70d4989777bc3658a4bb, type: 3}
-  _description: Shift your soul
-  symbolSprite: {fileID: 21300000, guid: b391ab3df93f6bc4993e6ea3b4130155, type: 3}
+  _description: Control Objects
+  symbolSprite: {fileID: 21300000, guid: 6fa8b3776e3f8c24b94867d01a46c5d1, type: 3}
