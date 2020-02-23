@@ -45,13 +45,25 @@
             destPoint = (destPoint + 1) % points.Length;
         }
 
-        void OnCollisionEnter(Collision other) {
+        void OnTriggerEnter(Collider other) {
+            // Checking if the collision occurs by comparing with the Player tag
+            float deltaHeight = Math.Abs(other.transform.position.z - transform.position.z);
+            Debug.Log(deltaHeight < deltaHeightThereshold);
+            if(other.gameObject.CompareTag("Player") && deltaHeight < deltaHeightThereshold) {
+                // Call Gameover Logic
+                Debug.Log("Gameover!");
+                GetComponent<Animator>().SetBool("IsAttack", true);
+            }
+        }
 
+        void OnCollisionEnter(Collision other) {
+            Debug.Log("dss");
             // Checking if the collision occurs by comparing with the Player tag
             float deltaHeight = Math.Abs(other.transform.position.y - transform.position.y);
             if(other.gameObject.CompareTag("Player") && deltaHeight < deltaHeightThereshold) {
                 // Call Gameover Logic
                 Debug.Log("Gameover!");
+                GetComponent<Animator>().SetBool("IsAttack", true);
             }
         }
         void Update () {
@@ -70,6 +82,7 @@
                     agent.speed = agent.speed / speedFactorChange;
                     targetDetected = false;
                 }
+                GetComponent<Animator>().SetBool("IsAttack", false);
                 GotoNextPoint();
             }
         }
