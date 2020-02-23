@@ -43,7 +43,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 3a09c41aced78b24dba690ac28538e0d,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -171,7 +171,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -3604849236294024475, guid: 3a09c41aced78b24dba690ac28538e0d,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -299,7 +299,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -1210575773522093319, guid: 3a09c41aced78b24dba690ac28538e0d,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -427,7 +427,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 6027413187850172843, guid: 3a09c41aced78b24dba690ac28538e0d,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -555,7 +555,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 2724754337203848296, guid: 3a09c41aced78b24dba690ac28538e0d,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -693,10 +693,16 @@ MonoBehaviour:
   master: {fileID: 600238615632832197}
   background: {fileID: 6560954048606869999}
   effect: {fileID: 963476906713016735}
-  musicTrack: {fileID: 8300000, guid: 9316697b8b357df4d88dedc80810453a, type: 3}
+  musicTrackFull: {fileID: 8300000, guid: 9316697b8b357df4d88dedc80810453a, type: 3}
+  musicTrack1: {fileID: 8300000, guid: 8084d530f397da444b14a928e191ea29, type: 3}
+  musicTrack2: {fileID: 8300000, guid: eff2d54974118b24d9ab2a742f724835, type: 3}
+  musicTrack3: {fileID: 8300000, guid: 76aebcf3f8ec8da4682afda1059c874d, type: 3}
+  musicTrack4: {fileID: 8300000, guid: 2a09642fc6dd50a4eb502be2a2b912e7, type: 3}
   cubeSound: {fileID: 8300000, guid: ed060c51408e88346978df31077aefc8, type: 3}
-  tileActivateSound: {fileID: 8300000, guid: 5a6729eadd4d9c345b9600b70847a81a, type: 3}
+  tileActivateSound: {fileID: 8300000, guid: 90a9cd0ce3b44e84fb69d90987030a03, type: 3}
   portalSound: {fileID: 8300000, guid: 40fd5a23156cc4344a6a00efc7b52d88, type: 3}
   deathCharacterSound: {fileID: 8300000, guid: 679419bb5e5bc5e49989be9c99539dfb, type: 3}
   gruntCharacterSound: {fileID: 8300000, guid: 00d80aca646fcfd4b92841cf88a32c00, type: 3}
   colorSound: {fileID: 8300000, guid: a0fefcf4e3e79074a9392321c198f4ed, type: 3}
+  zombieSound: {fileID: 8300000, guid: 8496fdc950506d8449d7f3ee0857b837, type: 3}
+  zombieOneShotSound: {fileID: 8300000, guid: 635255e467ad71446bec30a6267e8298, type: 3}
