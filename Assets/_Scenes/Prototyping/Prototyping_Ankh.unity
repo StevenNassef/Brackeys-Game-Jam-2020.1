@@ -4380,6 +4380,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Color Palette
       objectReference: {fileID: 0}
+    - target: {fileID: 6982878620971628978, guid: f969e66e7a6a6cd4d9873afe19ec9ae0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f969e66e7a6a6cd4d9873afe19ec9ae0, type: 3}
 --- !u!1 &797034568 stripped
@@ -5024,16 +5029,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8327168584762080301, guid: 0b92447849200bf4c86954969f8c749a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.25000006
-      objectReference: {fileID: 0}
-    - target: {fileID: 8327168584762080301, guid: 0b92447849200bf4c86954969f8c749a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.40000015
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b92447849200bf4c86954969f8c749a, type: 3}
