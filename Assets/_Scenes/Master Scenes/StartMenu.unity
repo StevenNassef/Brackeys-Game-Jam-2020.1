@@ -969,6 +969,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321339088}
   m_CullTransparentMesh: 0
+--- !u!1001 &1698487533
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 796782642708417305, guid: 682799271728de64ebc801e500a164a1,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 796782642708417306, guid: 682799271728de64ebc801e500a164a1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 796782642708417306, guid: 682799271728de64ebc801e500a164a1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 796782642708417306, guid: 682799271728de64ebc801e500a164a1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 323.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 796782642708417306, guid: 682799271728de64ebc801e500a164a1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796782642708417306, guid: 682799271728de64ebc801e500a164a1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796782642708417306, guid: 682799271728de64ebc801e500a164a1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796782642708417306, guid: 682799271728de64ebc801e500a164a1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 796782642708417306, guid: 682799271728de64ebc801e500a164a1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 796782642708417306, guid: 682799271728de64ebc801e500a164a1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796782642708417306, guid: 682799271728de64ebc801e500a164a1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796782642708417306, guid: 682799271728de64ebc801e500a164a1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 682799271728de64ebc801e500a164a1, type: 3}
+--- !u!114 &1698487534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 796782642708417307, guid: 682799271728de64ebc801e500a164a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1698487533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e61e31c7d83eb469288e59a1337c45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1853689550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -976,6 +1057,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1585140107, guid: bef64911b2ae9334cbb2f7f426f995f8, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1542729439876317505, guid: bef64911b2ae9334cbb2f7f426f995f8,
         type: 3}
       propertyPath: m_Sprite
@@ -1380,9 +1465,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5508761532771744564}
-        m_MethodName: onClickStart
-        m_Mode: 3
+      - m_Target: {fileID: 1698487534}
+        m_MethodName: NextScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1839,7 +1924,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c4ec1b2aead152849888addfee3d0c75, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0be45b8864100d841b86930731aa5dda, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

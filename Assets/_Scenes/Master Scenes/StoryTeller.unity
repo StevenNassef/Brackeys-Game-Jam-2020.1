@@ -585,6 +585,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8052381892856311016, guid: f6cd1a699891fa54695ba389e82ade64,
         type: 3}
+      propertyPath: StoryScreens.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052381892856311016, guid: f6cd1a699891fa54695ba389e82ade64,
+        type: 3}
       propertyPath: go_LoadingScreen
       value: 
       objectReference: {fileID: 1365140226}
@@ -605,14 +610,14 @@ PrefabInstance:
       propertyPath: StoryScreens.Array.data[0].storyText
       value: In 2230 B.C a dead pharaoh discovered a way to travel from the Duat
         (Realm of the death) back to life, His desire was to destroy all the other
-        great pharaohs tombs to be the greatest pharaoh to rule Egypt
+        great pharaohs tombs to be the greatest pharaoh to rule Egypt.
       objectReference: {fileID: 0}
     - target: {fileID: 8052381892856311016, guid: f6cd1a699891fa54695ba389e82ade64,
         type: 3}
       propertyPath: StoryScreens.Array.data[1].storyText
       value: The tomb keeper of the great pyramids will try to stop him after he
         unleashed the pharaonic curse on the great pyramids. Using her legendary
-        staff and it's ability to create different holes will
+        staff and it's ability to create different holes.
       objectReference: {fileID: 0}
     - target: {fileID: 8052381892856311018, guid: f6cd1a699891fa54695ba389e82ade64,
         type: 3}
@@ -772,12 +777,28 @@ PrefabInstance:
     - target: {fileID: 8052381893894712135, guid: f6cd1a699891fa54695ba389e82ade64,
         type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 42.85
       objectReference: {fileID: 0}
     - target: {fileID: 8052381893894712135, guid: f6cd1a699891fa54695ba389e82ade64,
         type: 3}
       propertyPath: m_fontSizeBase
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052381893894712135, guid: f6cd1a699891fa54695ba389e82ade64,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
+    - target: {fileID: 8052381893894712135, guid: f6cd1a699891fa54695ba389e82ade64,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 8052381893894712135, guid: f6cd1a699891fa54695ba389e82ade64,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8052381894626091828, guid: f6cd1a699891fa54695ba389e82ade64,
         type: 3}
