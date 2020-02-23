@@ -8,7 +8,7 @@ public class ParentSpellTileController : MonoBehaviour
     [SerializeField] private GameObject _GFX;
     [SerializeField] private bool _isActivatingTile;
     [SerializeField] private bool _isEffectTile;
-
+    [SerializeField] private GameObject _holeGFX;
     [Space(20)]
     [Separator("Spell Type")]
     [SerializeField] protected SpellType spellType;
@@ -148,8 +148,13 @@ public class ParentSpellTileController : MonoBehaviour
         if (spellController.SpellActivated && _isEffectTile)
         {
             Debug.Log("Spell Activated");
+            if (_holeGFX != null)
+            {
+                _holeGFX.SetActive(true);
+            }
             currentSpellLogic.SpellTileMouseDown();
             PlayerManager.instance.TriggerSpellAnimation();
+
         }
     }
     private void OnMouseUp()
