@@ -43,7 +43,7 @@ public class ColorWheelManager : MonoBehaviour
         }
 
         
-        if(Input.GetKeyUp(KeyCode.Mouse0)) {
+        if(activated && Input.GetKeyUp(KeyCode.Mouse0)) {
             DeactivateWheel();
             Debug.Log("Color wheel deactivated");
         }

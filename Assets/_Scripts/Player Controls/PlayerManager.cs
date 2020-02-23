@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour
         {
 
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            // DontDestroyOnLoad(this.gameObject);
 
             //Rest of your Awake code
 

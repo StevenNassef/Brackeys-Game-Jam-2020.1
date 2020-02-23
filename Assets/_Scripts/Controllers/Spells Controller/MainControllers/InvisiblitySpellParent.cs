@@ -14,7 +14,7 @@ public class InvisiblitySpellParent : ParentSpellController
         {
 
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            // DontDestroyOnLoad(this.gameObject);
 
             //Rest of your Awake code
 

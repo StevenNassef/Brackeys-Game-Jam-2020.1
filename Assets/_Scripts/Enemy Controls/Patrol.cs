@@ -48,11 +48,12 @@
         void OnTriggerEnter(Collider other) {
             // Checking if the collision occurs by comparing with the Player tag
             float deltaHeight = Math.Abs(other.transform.position.z - transform.position.z);
-            Debug.Log(deltaHeight < deltaHeightThereshold);
+            // Debug.Log(deltaHeight < deltaHeightThereshold);
             if(other.gameObject.CompareTag("Player") && deltaHeight < deltaHeightThereshold) {
                 // Call Gameover Logic
                 Debug.Log("Gameover!");
                 GetComponent<Animator>().SetBool("IsAttack", true);
+                LevelManager.instance.GameOver();
             }
         }
 
@@ -64,6 +65,7 @@
                 // Call Gameover Logic
                 Debug.Log("Gameover!");
                 GetComponent<Animator>().SetBool("IsAttack", true);
+                
             }
         }
         void Update () {
