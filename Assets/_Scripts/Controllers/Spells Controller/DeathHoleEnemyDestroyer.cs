@@ -16,6 +16,10 @@ public class DeathHoleEnemyDestroyer : MonoBehaviour
     {
 
     }
+    private void OnEnable()
+    {
+        PlayerManager.instance.soundManage.playPortalSound();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,7 +29,7 @@ public class DeathHoleEnemyDestroyer : MonoBehaviour
             Rigidbody body = other.gameObject.GetComponent<Rigidbody>();
             Patrol patrol = other.gameObject.GetComponent<Patrol>();
             // agent.isActiveAndEnabled = false;
-            if(patrol != null)
+            if (patrol != null)
             {
                 patrol.enabled = false;
             }
