@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ColorWheelManager : MonoBehaviour
 {
@@ -18,11 +19,17 @@ public class ColorWheelManager : MonoBehaviour
     public float initXScale;
     public float initYScale;
 
+    public Image symbolIcon;
+    public Text spellDescriptionText;
+
     private bool activated;
 
     private Spell selectedSpell;
     [SerializeField] private List<Spell> spellList;
 
+    void Start() {
+        SetEnableSummaryUI(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -52,6 +59,7 @@ public class ColorWheelManager : MonoBehaviour
 
     void DeactivateWheel() {
         activated = false;
+        SetEnableSummaryUI(false);
         animator.SetTrigger("Close");
         colorWheelObject.SetActive(false);
         PlayerManager.instance.CurrentAnkhController.SetAnkhSpell(selectedSpell);
@@ -67,9 +75,18 @@ public class ColorWheelManager : MonoBehaviour
 
     public void SelectColor(int colorNum) {
         if(activated) {
+            SetEnableSummaryUI(true);
             selectedSpell = spellList[colorNum];
+            symbolIcon.sprite = selectedSpell.SymbolSprite;
+            spellDescriptionText.text = selectedSpell.Description;
         }
         Debug.Log("Selected Color is " + selectedSpell);
+    }
+
+
+    private void SetEnableSummaryUI(bool isEnabled) {
+        symbolIcon.enabled = isEnabled;
+        spellDescriptionText.enabled = isEnabled;
     }
 
 }

@@ -11,11 +11,13 @@ public class Spell : ScriptableObject
     [SerializeField] private Texture _spellActivationSymbol;
     [SerializeField] private Texture _spellEffectSymbol;
     [SerializeField] [TextArea] private string _description;
+    [SerializeField] private Sprite symbolSprite;
     public SpellType SpellType => _spellType;
     public Color SpellColor => _spellColor;
     public Texture SpellActivationSymbol => _spellActivationSymbol;
     public Texture SpellEffectSymbol => _spellEffectSymbol;
     public string Description => _description;
+    public Sprite SymbolSprite => symbolSprite;
 
 }
 
