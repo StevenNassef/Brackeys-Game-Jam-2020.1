@@ -177,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dummyCube: {fileID: 4454423208594068292}
   dummyCubeController: {fileID: 4454423208594068294}
+  holeGFX: {fileID: 8677161226656828717}
 --- !u!208 &9088782797911040588
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -200,6 +201,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4454423209006150716}
     m_Modifications:
+    - target: {fileID: 1094867815, guid: 3b48ac3527dbb404cb845edbf4e321a7, type: 3}
+      propertyPath: localPosition
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6599830615491193417, guid: 3b48ac3527dbb404cb845edbf4e321a7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -501,7 +506,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _holeGFX
       value: 
-      objectReference: {fileID: 8677161226656828717}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcf278bb40a09ad47ac9dd835843ce68, type: 3}
 --- !u!4 &4084162488722215837 stripped

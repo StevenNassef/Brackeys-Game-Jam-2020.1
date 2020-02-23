@@ -6,6 +6,7 @@ public class HoleController : MonoBehaviour
 {
     [SerializeField] private VisualEffect spellEffect;
     [SerializeField] private Spell _currentSpell;
+    [SerializeField] private bool localPosition;
     public Spell currentSpell => _currentSpell;
     private Animator animator;
     private Vector3 initialPosition;
@@ -19,7 +20,14 @@ public class HoleController : MonoBehaviour
 
     private void OnEnable()
     {
-        initialPosition = transform.position;
+        if (localPosition)
+        {
+            initialPosition = transform.position;
+        }
+        else
+        {
+            initialPosition = transform.position;
+        }
         initialScale = transform.localScale;
         PlayerManager.instance.soundManage.playPortalSound();
         spellEffect.SetVector4("Color", currentSpell.SpellColor);
@@ -39,7 +47,14 @@ public class HoleController : MonoBehaviour
         {
             yield return null;
         }
-        transform.position = initialPosition;
+        if (localPosition)
+        {
+            transform.localPosition = new Vector3(transform.localPosition.x, initialPosition.y, transform.localPosition.z);
+        }
+        else
+        {
+            transform.position = initialPosition;
+        }
         transform.localScale = initialScale;
         gameObject.SetActive(false);
     }

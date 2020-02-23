@@ -6,6 +6,7 @@ public class TelekanisisCubeController : SpellLogicController
 {
     [SerializeField] GameObject dummyCube;
     [SerializeField] TelekanisiDummyCube dummyCubeController;
+    [SerializeField] GameObject holeGFX;
     void Start()
     {
         dummyCubeController = dummyCube.GetComponent<TelekanisiDummyCube>();
@@ -22,6 +23,7 @@ public class TelekanisisCubeController : SpellLogicController
         if(dummyCubeController.isSafe)
         {
             transform.position = dummyCube.transform.position;
+            holeGFX.SetActive(true);
         }
         dummyCube.SetActive(false);
         dummyCube.transform.position = transform.position;
