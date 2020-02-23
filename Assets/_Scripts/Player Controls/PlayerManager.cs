@@ -30,6 +30,11 @@ public class PlayerManager : MonoBehaviour
             Destroy(this);
         }
     }
+    public void TriggerColorWallAnimation()
+    {
+        _playerAnimator.SetBool("ColorWall", true);
+        soundManage.playColorSound();
+    }
     public void TriggerSpellAnimation()
     {
         string triggerName = "";

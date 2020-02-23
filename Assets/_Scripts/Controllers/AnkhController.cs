@@ -63,6 +63,7 @@ public class AnkhController : MonoBehaviour
 
     public void SetAnkhSpell(Spell newSpell)
     {
+        PlayerManager.instance.TriggerColorWallAnimation();
         if (newSpell == null)
         {
             SetAnkhColor(Color.black);

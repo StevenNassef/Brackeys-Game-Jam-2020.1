@@ -282,6 +282,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b48ac3527dbb404cb845edbf4e321a7, type: 3}
+--- !u!1 &8677161226656828717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6599830616666804659, guid: 3b48ac3527dbb404cb845edbf4e321a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2593007765349751966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8677161226656828716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6599830616666804658, guid: 3b48ac3527dbb404cb845edbf4e321a7,
@@ -491,6 +497,11 @@ PrefabInstance:
       propertyPath: _isActivatingTile
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 395356257732138621, guid: bcf278bb40a09ad47ac9dd835843ce68,
+        type: 3}
+      propertyPath: _holeGFX
+      value: 
+      objectReference: {fileID: 8677161226656828717}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcf278bb40a09ad47ac9dd835843ce68, type: 3}
 --- !u!4 &4084162488722215837 stripped
