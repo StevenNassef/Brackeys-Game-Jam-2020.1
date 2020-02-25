@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using MyBox;
 namespace Player.Control
 {
 	[RequireComponent(typeof(Rigidbody))]
@@ -12,11 +12,19 @@ namespace Player.Control
     {
         [SerializeField] float m_MovingTurnSpeed = 360;
 		[SerializeField] float m_StationaryTurnSpeed = 180;
+		[Space(10)]
+		[Separator("Jumping")]
 		[SerializeField] float m_JumpPower = 12f;
+		[Tooltip("How much the player will move in the direction of the jump")]
+		[SerializeField] float m_HorizontalJumpSpeedModifier = 1;
 		[Range(1f, 4f)][SerializeField] float m_GravityMultiplier = 2f;
+		[Space(10)]
+		[Separator("Animation")]
 		[SerializeField] float m_RunCycleLegOffset = 0.2f; //specific to the character in sample assets, will need to be modified to work with others
 		[SerializeField] float m_MoveSpeedMultiplier = 1f;
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
+		[Space(10)]
+		[Separator("Advanced")]
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
 		[SerializeField] float essentialRotationAngleInYAxis = 45.0f;
 		[SerializeField] float raycastCheckGroundOffset = 0.05f;
@@ -90,12 +98,13 @@ namespace Player.Control
 
 			// send input and other state parameters to the animator
 			UpdateAnimator(move);
+			Debug.DrawRay(transform.position, move * 2f, Color.green, 0.1f);
 		}
 
 		void UpdateAnimator(Vector3 move)
 		{
 			// update the animator parameters
-			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
+			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.08f, Time.deltaTime);
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
 			if (!m_IsGrounded)
@@ -131,6 +140,8 @@ namespace Player.Control
 
 		void HandleAirborneMovement()
 		{
+			//If aircontrol enabled
+
 			// apply extra gravity from multiplier:
 			Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
 			m_Rigidbody.AddForce(extraGravityForce);
@@ -145,7 +156,12 @@ namespace Player.Control
 			if (jump && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
 			{
 				// jump!
-				m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
+				Vector3 jumpDirection = new Vector3(m_Rigidbody.velocity.x, 0, m_Rigidbody.velocity.z);
+				jumpDirection.Normalize();
+				jumpDirection *= m_HorizontalJumpSpeedModifier;
+				jumpDirection *= m_ForwardAmount;
+				jumpDirection.y = m_JumpPower;
+				m_Rigidbody.velocity = jumpDirection;
 				m_IsGrounded = false;
 				m_Animator.applyRootMotion = false;
 				m_GroundCheckDistance = 0.1f;
@@ -197,9 +213,9 @@ namespace Player.Control
 								(Vector3.down * m_GroundCheckDistance));
 			// Debug.Log("EndVector " + startVector);
 
-			Debug.DrawRay(startVector,
-				endVector,
-				Color.green, 2, true);
+			// Debug.DrawRay(startVector,
+			// 	endVector,
+			// 	Color.green, 2, true);
 
 			// 0.1f is a small offset to start the ray from inside the character
 			// it is also good to note that the transform position in the sample assets is at the base of the character
