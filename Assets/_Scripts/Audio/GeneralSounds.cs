@@ -12,7 +12,7 @@ public class GeneralSounds : MonoBehaviour
     public GameObject background;
     public GameObject effect;
 
-    public AudioClip musicTrackFull;
+    // public AudioClip musicTrackFull;
     public AudioClip musicTrack1;
     public AudioClip musicTrack2;
     public AudioClip musicTrack3;
@@ -75,10 +75,10 @@ public class GeneralSounds : MonoBehaviour
         playEffect(portalSound, false);
     }
 
-    [ButtonMethod]
-    public void playMusicFull() {
-        playMusic(musicTrackFull, true);
-    }
+    // [ButtonMethod]
+    // public void playMusicFull() {
+    //     playMusic(musicTrackFull, true);
+    // }
 
     [ButtonMethod]
     public void playMusicPart1() {
